@@ -99,7 +99,7 @@ Try some of your own! Of course, DrQA might provide alternative facts, so enjoy 
 
 _Setting up DrQA is easy!_
 
-DrQA requires Linux/OSX and Python 3.5 or higher. It also requires installing [PyTorch](http://pytorch.org/). Its other dependencies are listed in requirements.txt. CUDA is strongly recommended for speed, but not necessary.
+DrQA requires Linux/OSX and Python 3.5 or higher. It also requires installing [PyTorch](http://pytorch.org/) (version 0.4.0 is not supported yet). Its other dependencies are listed in requirements.txt. CUDA is strongly recommended for speed, but not necessary.
 
 Run the following commands to clone the repository and install DrQA:
 
@@ -359,7 +359,7 @@ DrQA's performance improves significantly in the full-setting when provided with
 >DS Document: Live Free or Die
  **“Live Free or Die”** is the official **motto** of the **U.S. state** of _**New Hampshire**_, adopted by the **state** in 1945. It is possibly the best-known of all state mottos, partly because it conveys an assertive independence historically found in American political philosophy and partly because of its contrast to the milder sentiments found in other state mottos.
 
-The `scripts/distant` directory contains code to generate and inspect such distantly supervised data.
+The `scripts/distant` directory contains code to generate and inspect such distantly supervised data. More information can be found in the distant supervision [README](scripts/distant/README.md).
 
 ### Tokenizers
 
@@ -386,11 +386,14 @@ Please cite the ACL paper if you use DrQA in your work:
 }
 ```
 
-## Connection with ParlAI
+## DrQA Elsewhere
 
-This implementation of the DrQA Document Reader is closely related to the one found in [ParlAI](https://github.com/facebookresearch/ParlAI). Here, however, the work is extended to interact with the Document Retriever in the open-domain setting. It is also somewhat more efficient to train and achieves slightly better performance given that the ParlAI API restrictions are lifted (e.g. with respect to preprocessing, answer spans, etc).
+### Connection with ParlAI
+This implementation of the DrQA Document Reader is closely related to the one found in [ParlAI](https://github.com/facebookresearch/ParlAI). Here, however, the work is extended to interact with the Document Retriever in the open-domain setting. On the other hand, the implementation in ParlAI is more general, and follows the appropriate API to work in more QA/Dialog settings.
 
-We plan to consolidate this model into the ParlAI interface as well, so that the reader can be interchangeably trained here or multitasked on many datasets with ParlAI.
+### Web UI
+
+[Hamed Zaghaghi](https://github.com/zaghaghi/) has provided a wrapper for a [Web UI](https://github.com/zaghaghi/drqa-webui).
 
 ## License
 DrQA is BSD-licensed. We also provide an additional patent grant.
